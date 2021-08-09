@@ -73,16 +73,16 @@ observer.observe(document.querySelector('.journey__text'));
 
 
 //LOGIN FORM 
-const button = document.querySelector(".form-container");
+const form = document.querySelector(".form-container");
 
 function popupToggle () {
-    button.style.display = "block";
+    form.style.display = "block";
     document.querySelector('.form-background').style.display = "block";
     document.querySelector('body').style.overflow = "hidden";
 }
 
 function popupClose () {
-    button.style.display = "none";
+    form.style.display = "none";
     document.querySelector('.form-background').style.display = "none";
     document.querySelector('body').style.overflow = "overlay";
 }
