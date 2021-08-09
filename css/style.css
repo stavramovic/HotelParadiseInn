@@ -277,7 +277,8 @@ body {
 .carousel-container img {
   background-size: cover;
   height: 40rem;
-  width: 60rem; }
+  width: 60rem;
+  border-radius: 1rem; }
 
 .carousel__text {
   text-align: center;
@@ -305,7 +306,8 @@ body {
   font-weight: 400;
   padding: 8px 12px;
   position: absolute;
-  top: 0; }
+  top: 0;
+  border-top-left-radius: 1rem; }
 
 .form-container {
   position: absolute;
