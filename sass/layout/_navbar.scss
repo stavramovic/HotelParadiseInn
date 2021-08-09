@@ -1,0 +1,109 @@
+nav {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	height: 15vh; 
+	background-color: rgba(30,144,255, .8);
+	position: absolute;  /*mozda staviti da se ne pomera pa da se promeni ceo bar nakon skrola*/
+}
+
+.logo {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 30px;
+	font-family: 'Satisfy', cursive;
+	animation: show 1.5s ease; 
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+	animation: show 1.5s ease; 
+
+    & li {
+        list-style: none;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+ }
+
+.burger {
+	display: none;
+	cursor: pointer;
+
+    & div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px;
+    }
+}
+
+.nav-active {
+	transform: translateX(0%);
+}
+ 
+.scrolling-active {
+	background-color: white;
+	border-bottom: 1px solid black;
+	animation: moveFromTop 1.5s ease-in;
+	z-index: 1500;
+	height: 7rem;
+	position: fixed;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+
+
+.scrolling-active .logo {
+	color:black;
+}
+
+.scrolling-active .nav-links a {
+	color:black;
+}
+
+/*
+
+ @media screen and (max-width:1024px) {
+	.nav-links {
+		width: 60%;
+	}
+}
+
+ @media screen and (max-width:768px) {
+	body {
+		overflow-x: hidden;
+	}
+	 .nav-links {
+		 position: absolute;
+		 right: 0px;
+		 height: 92vh;
+		 top: 8vh;
+		 background-color: white;
+		 display: flex;
+		 flex-direction: column;
+		 align-items: center;
+		 width: 50%;
+		 transform: translateX(100%);
+		 transition: transform 0.5 ease-in;
+	 }
+	 .nav-links li {
+		 opacity: 0;
+	 }
+	 .burger{
+		 display: block;
+	 }
+ }
+
+ */

@@ -1,0 +1,65 @@
+.card {
+    height: 45rem;
+    overflow: hidden;
+    position: relative;
+
+    &__card--1 {
+        background-image:
+            url(../img/indoor-yoga.jpg);
+            height: 100%;
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+    }
+    
+
+    &__card--2 {
+        background-image:
+            url(../img/snow.jpg);
+            height: 100%;
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+    }
+
+    &__card--3 {
+        background-image:
+            url(../img/lake.jpg);
+            height: 100%;
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+    }
+    
+}
+
+.glassEffect {
+    background-color: white;
+    position: absolute;
+    height: 0;
+    width: 25rem;
+    margin: 3.3rem 2.5rem;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: all 1s ease;
+    transition: height 1s ease;
+}
+
+.card:hover .glassEffect {
+    height: 38.3rem;
+    opacity: 0.2;
+}
+
+.journey-animation {
+    visibility: hidden;
+}
+
+//dodati beli div preko slike uz position absolute
+
+//zameniti prvi deo sa cardom a na drugo mesto staviti sliku planine i klip

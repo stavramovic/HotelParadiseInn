@@ -1,0 +1,62 @@
+.row {
+    max-width: 135rem;
+    margin: 0 auto;
+
+    @include clearfix;
+
+    [class^="col-"] {
+        float:left;
+
+        &:not(:last-child) {
+            margin-right: 6rem;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - 6rem) / 2);
+     }
+}
+
+.row__journey {
+    max-width: 165rem;
+    margin: 0 auto;
+
+    @include clearfix;
+
+    [class^="col__"] {
+        float:left;
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+    }
+
+    .col__journey--1 {
+        width: 30rem;
+    }
+
+    .col__journey--2 {
+        width: 60rem;
+        padding: 5rem;
+     }
+}
+
+.row__packages {
+    max-width: 130rem;
+    margin: 0 auto;
+    visibility: hidden;
+
+    @include clearfix;
+
+    [class^="col__"] {
+        float:left;
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+    }
+
+    .col__packages {
+        width: 40rem;
+    }
+}

@@ -1,0 +1,70 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.4rem 4rem;
+        display: inline-block;
+        font-size: 1.5rem;
+        position: relative;
+        border: 1px solid #1b2835;
+    }
+
+    &--white {
+        background-color: white;
+        color: #1b2835;
+        font-weight: 600;
+        text-align: center;
+
+        &::after {
+            background-color: #1b2835;
+            color: white;
+            border: solid #1b2835;
+        }
+
+        &:hover {
+            background-color: #1b2835;
+            color: white;
+        }
+
+        &-booking {
+            margin-top: 28rem;
+        }
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+    font-size: 1.8rem;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.5rem;
+    }
+
+    &:before {
+        content: "LEARN\00a0MORE\00a0 ABOUT\00a0PARADISE\00a0INN";
+        position: absolute;
+        width: 0;
+        top: 0;
+        left: 0;
+        color: #a17a23;
+        overflow: hidden;
+        transition: all 1s linear;
+        border-bottom: 2px solid #a17a23;
+        padding-bottom: 0.4rem;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
+
+/*    
+    &:active {
+
+    }  */
+}

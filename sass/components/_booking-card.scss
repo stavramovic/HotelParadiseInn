@@ -1,0 +1,55 @@
+.booking-card {
+    height: 65rem;
+    outline: 1px solid #1b2835;
+    outline-offset: -1.5rem;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+
+    &__img-1 {
+        height: 22rem;
+        width: 40rem;
+        background-image: url(../img/twin-rooms.jpg);
+        background-size: cover;
+    }
+
+    &__img-2 {
+        height: 22rem;
+        width: 40rem;
+        background-image: url(../img/double-rooms.jpg);
+        background-size: cover;
+    }
+
+    &__img-3 {
+        height: 22rem;
+        width: 40rem;
+        background-image: url(../img/suites.jpeg);
+        background-size: cover;
+    }
+}
+
+.booking-card-paragraph {
+	padding: 2rem;
+	font-size: 2.5rem;
+	color: #1b2835;
+	font-weight: 600;
+	font-style: italic;
+}
+
+.ul__booking {
+	list-style: none;
+	font-size: 1.6rem;
+	position: absolute;
+	margin-left: 6rem;
+	margin-right: 3rem;
+}
+
+.ul__booking .li__booking:before {
+	content: '✓';
+	padding-right: 1rem;
+	margin-left: -2.3rem;
+}
+
+.li__booking {
+	margin-top: 0.4rem;
+}
