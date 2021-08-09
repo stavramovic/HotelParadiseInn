@@ -4,7 +4,7 @@ showPictures();
 
 function showPictures() {
     var i;
-    var carousel = document.getElementsByClassName("carousel");
+    var carousel = document.getElementsByClassName('carousel');
     for(i=0; i<carousel.length; i++) {
         carousel[i].style.display = "none";
     }
@@ -73,16 +73,26 @@ observer.observe(document.querySelector('.journey__text'));
 
 
 //LOGIN FORM 
-const form = document.querySelector(".form-container");
+const form = document.querySelector('.form-container');
 
-function popupToggle () {
+function popupToggle() {
     form.style.display = "block";
     document.querySelector('.form-background').style.display = "block";
     document.querySelector('body').style.overflow = "hidden";
 }
 
-function popupClose () {
+function popupClose() {
     form.style.display = "none";
     document.querySelector('.form-background').style.display = "none";
     document.querySelector('body').style.overflow = "overlay";
 }
+
+
+
+const formBackground = document.querySelector('.form-background');
+
+formBackground.addEventListener('click', function() {
+    form.style.display = "none";
+    document.querySelector('.form-background').style.display = "none";
+    document.querySelector('body').style.overflow = "overlay";
+})
