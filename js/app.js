@@ -75,19 +75,23 @@ observer.observe(document.querySelector('.journey__text'));
 //LOGIN FORM 
 const form = document.querySelector('.form-container');
 
-function popupToggle() {
-    form.style.display = "block";
-    document.querySelector('.form-background').style.display = "block";
-    document.querySelector('body').style.overflow = "hidden";
+const formButton = document.getElementsByClassName('formButton');
+for(var i=0; i<formButton.length; i++) {
+    formButton[i].addEventListener('click', function(event) {
+        form.style.display = "block";
+        document.querySelector('.form-background').style.display = "block";
+        document.querySelector('body').style.overflow = "hidden";
+        event.preventDefault();
+    })
 }
 
-function popupClose() {
+const closeBtn = document.querySelector('.close-btn');
+
+closeBtn.addEventListener('click', function() {
     form.style.display = "none";
     document.querySelector('.form-background').style.display = "none";
     document.querySelector('body').style.overflow = "overlay";
-}
-
-
+})
 
 const formBackground = document.querySelector('.form-background');
 
