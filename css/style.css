@@ -310,7 +310,7 @@ body {
   border-top-left-radius: 1rem; }
 
 .form-container {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -401,7 +401,7 @@ body {
   display: none; }
 
 .register__form-container {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
