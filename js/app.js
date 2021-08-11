@@ -72,31 +72,60 @@ observer.observe(document.querySelector('.journey__text'));
 
 
 
-//LOGIN FORM 
-const form = document.querySelector('.form-container');
+//OPEN LOGIN FORM 
+const loginForm = document.querySelector('.form-container');
 
 const formButton = document.getElementsByClassName('formButton');
-for(var i=0; i<formButton.length; i++) {
+for(let i=0; i<formButton.length; i++) {
     formButton[i].addEventListener('click', function(event) {
-        form.style.display = "block";
+        loginForm.style.display = "block";
         document.querySelector('.form-background').style.display = "block";
         document.querySelector('body').style.overflow = "hidden";
         event.preventDefault();
     })
 }
 
-const closeBtn = document.querySelector('.close-btn');
+//CLOSE LOGIN FORM
+const closeBtn = document.getElementsByClassName('close-btn');
+for(let i=0; i<closeBtn.length; i++){
+    closeBtn[i].addEventListener('click', function() {
+    loginForm.style.display = "none";
+    registerForm.style.display = "none";
+    document.querySelector('.form-background').style.display = "none";
+    document.querySelector('body').style.overflow = "overlay";
+    }) 
+}
 
-closeBtn.addEventListener('click', function() {
-    form.style.display = "none";
+//CLOSE ON CLICK ON BACKGROUND
+const formBackground = document.querySelector('.form-background');
+
+formBackground.addEventListener('click', function() {
+    loginForm.style.display = "none";
+    registerForm.style.display = "none";
     document.querySelector('.form-background').style.display = "none";
     document.querySelector('body').style.overflow = "overlay";
 })
 
-const formBackground = document.querySelector('.form-background');
+//OPEN REGISTER FORM
+const signUpButton = document.querySelector('.signup-button');
+const registerForm = document.querySelector('.register__form-container');
 
-formBackground.addEventListener('click', function() {
-    form.style.display = "none";
-    document.querySelector('.form-background').style.display = "none";
-    document.querySelector('body').style.overflow = "overlay";
+signUpButton.addEventListener('click', function(event) {
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+    document.querySelector('.form-background').style.display = "block";
+    document.querySelector('body').style.overflow = "hidden";
+    event.preventDefault();
+})
+
+
+//BACK TO LOGIN BUTTON
+const backToLogin = document.querySelector('.backToLogin'); 
+
+backToLogin.addEventListener('click', function(event) {
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+    document.querySelector('.form-background').style.display = "block";
+    document.querySelector('body').style.overflow = "hidden";
+    event.preventDefault();
 })

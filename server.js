@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 
-//OPEN HTML USING NODE
+
 const port = 3000
 
 app.use('/css', express.static(__dirname + '/css'))
