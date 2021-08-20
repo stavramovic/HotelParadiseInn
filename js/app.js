@@ -18,11 +18,11 @@ const navSlide = () => {
         burger.classList.toggle('toggle');
 
         if(nav.classList.contains('nav-active')) {
-            document.querySelector('.heading-primary--main').style.opacity = "0";
-            document.querySelector('.heading-primary--sub').style.opacity = "0";
+            document.querySelector('.heading-primary--main').style.animation = `hide 0.5s ease forwards`;
+            document.querySelector('.heading-primary--sub').style.animation = `hide 0.5s ease forwards`;
         } else {
-            document.querySelector('.heading-primary--main').style.opacity = "1";
-            document.querySelector('.heading-primary--sub').style.opacity = "1";
+            document.querySelector('.heading-primary--main').style.animation = '';
+            document.querySelector('.heading-primary--sub').style.animation = '';
         }
     });
 }

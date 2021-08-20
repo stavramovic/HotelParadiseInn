@@ -50,6 +50,12 @@
     opacity: 1;
     transform: translateX(0px); } }
 
+@keyframes hide {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 *,
 *::after,
 *::before {
@@ -701,7 +707,7 @@ nav {
   border-bottom: 1px solid black;
   animation: moveFromTop 1.5s ease-in;
   z-index: 1500;
-  height: 7rem;
+  height: 7vh;
   position: fixed;
   backface-visibility: hidden;
   overflow: hidden; }
@@ -724,7 +730,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 30%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in; }
     .nav-links li {
@@ -732,7 +738,13 @@ nav {
   .burger {
     display: block; }
   .nav-active {
-    transform: translateX(0%); } }
+    transform: translateX(0%); }
+  .scrolling-active .nav-links {
+    background-color: white;
+    top: 7vh;
+    height: 93vh;
+    border-left: 1px solid black;
+    position: fixed; } }
 
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px); }

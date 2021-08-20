@@ -73,3 +73,13 @@
         transform: translateX(0px);
     }
 }
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
