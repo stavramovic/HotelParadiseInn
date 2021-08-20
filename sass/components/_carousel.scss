@@ -1,22 +1,49 @@
 .carousel-container {
-   margin-left: 4.5rem;
-   position: relative;
-   visibility: hidden;
+    position: relative;
+    visibility: hidden;
+
+    @include respond(tab-land) {
+        height: 20rem;
+        width:35rem;
+        display: table;
+        margin: 0 auto;
+    }
 }
 .carousel-container img {
     background-size: cover;
     height: 40rem;
     width: 60rem;
     border-radius: 1rem;
+    
+    @include respond(tab-land) {
+        height: 20rem;
+        width:35rem;
+    }
 }
 
 .carousel__text {
 	text-align: center;
     visibility: hidden;
 
+    @include respond(tab-land) {
+        padding: 3rem;
+     }
+
+     @include respond(phone) {
+        padding: 2rem;
+     }
+
 	&--header {
 		font-size: 5rem;
 		margin: 4rem;
+
+        @include respond(tab-land) {
+            font-size: 4rem;
+         }
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
 
 		&-block {
 			display: block;
@@ -28,6 +55,11 @@
 		text-align: center;
 		letter-spacing: 2px;
 		margin-bottom: 3.5rem;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
 	}
 }
 

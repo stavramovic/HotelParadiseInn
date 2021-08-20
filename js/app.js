@@ -1,3 +1,34 @@
+//NAVBAR
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    burger.addEventListener('click',()=> {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index) => {
+            if(link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`;
+            }
+        });  
+        
+        burger.classList.toggle('toggle');
+
+        if(nav.classList.contains('nav-active')) {
+            document.querySelector('.heading-primary--main').style.opacity = "0";
+            document.querySelector('.heading-primary--sub').style.opacity = "0";
+        } else {
+            document.querySelector('.heading-primary--main').style.opacity = "1";
+            document.querySelector('.heading-primary--sub').style.opacity = "1";
+        }
+    });
+}
+
+navSlide();
+
 //CAROUSEL
 var carouselIndex = 0;
 showPictures();
@@ -129,3 +160,4 @@ backToLogin.addEventListener('click', function(event) {
     document.querySelector('body').style.overflow = "hidden";
     event.preventDefault();
 })
+

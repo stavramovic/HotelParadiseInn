@@ -3,6 +3,13 @@
     overflow: hidden;
     position: relative;
 
+    @include respond(tab-land) {
+        width: 33rem;
+        display: table;
+        margin: 0 auto;
+        
+     }
+
     &__card--1 {
         background-image:
             url(../img/indoor-yoga.jpg);
@@ -49,6 +56,10 @@
     overflow: hidden;
     -webkit-transition: all 1s ease;
     transition: height 1s ease;
+
+    @include respond(tab-land) {
+        width: 28rem;
+    }
 }
 
 .card:hover .glassEffect {

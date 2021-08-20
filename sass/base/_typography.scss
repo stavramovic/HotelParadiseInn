@@ -10,17 +10,21 @@
 
 .heading-primary--main {
 	display:block;
-	font-size: 75px;
-	letter-spacing: 16px;
-	margin-bottom: 5px;
+	font-size: 7.5rem;
+	letter-spacing: 1.6rem;
+	margin-bottom: 0.5rem;
 	font-family: 'Luckiest Guy', cursive;
 	animation: moveFromTop 2s ease-in-out;
+
+	@include respond(phone) {
+		letter-spacing: 0.5rem;
+	}
 }
 
 .heading-primary--sub {
 	display:block;
-	font-size: 25px;
-	letter-spacing: 8px;
+	font-size: 2.5rem;
+	letter-spacing: 0.8rem;
 	font-family: 'Kaushan Script', cursive;
 	backface-visibility: hidden;
 	animation: showUp 1s ease-in-out;
@@ -36,6 +40,10 @@
 		font-size: 4rem;
 		margin: 3rem;
 		text-align: center;
+
+		@include respond(phone) {
+			font-size: 3rem;
+		 }
 	}
 
 	&--paragraph {
@@ -55,6 +63,10 @@
 	&--header {
 		font-size: 4rem;
 		margin: 4rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
 	}
 
 	&--paragraph {
@@ -62,6 +74,21 @@
 		text-align: justify;
 		margin-bottom: 4rem;
 		letter-spacing: 2px;
+
+		@include respond(tab-land) {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+			padding-left: 3rem;
+			padding-right: 3rem;
+			text-align: center;
+        }
+	
+		 @include respond(phone) {
+			padding-left: 2rem;
+			padding-right: 2rem;
+			text-align: center;
+		 }
+	
 	}
 }
 

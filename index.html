@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
                    <a href="#">CONTACT</a>
                 </li> 
                 <li>
-                    <a href="#" class="formButton">Register/Login</a>
+                    <a href="#" class="formButton">REGISTER/LOGIN</a>
                  </li> 
             </ul>
             <div class="burger">
@@ -203,26 +203,26 @@
                     <div class="register__form-container">
                         <i class="close-btn fas fa-times"></i>
                         <div class="form-text">Register Form</div>
-                        <form action="#">
+                        <form action="/" method="POST">
                             <div class="data">
                                 <label>First Name</label>
-                                <input type="text" required>
+                                <input type="text" name="first_name" required>
                             </div>
                             <div class="data">
                                 <label>Last Name</label>
-                                <input type="text" required>
+                                <input type="text" name="last_name" required>
                             </div>
                             <div class="data">
                                 <label>Email</label>
-                                <input type="text" required>
+                                <input type="text" name="email" required>
                             </div>
                             <div class="data">
                                 <label>Password</label>
-                                <input type="password" required>
+                                <input type="password" name="password" required>
                             </div>
                             <div class="data">
                                 <label>Confirm Password</label>
-                                <input type="password" required>
+                                <input type="password" name="confirm_password" required>
                             </div>
                             <div class="form-btn">
                                 <div class="inner"></div>
