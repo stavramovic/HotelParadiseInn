@@ -507,15 +507,6 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
   .register__form-container form {
     margin-top: -2rem; }
-    .register__form-container form .forgot-pass {
-      margin-top: -8px; }
-      .register__form-container form .forgot-pass a {
-        color: #1b2835;
-        text-decoration: none;
-        font-size: 1.7rem;
-        font-weight: 600; }
-        .register__form-container form .forgot-pass a:hover {
-          text-decoration: underline; }
   .register__form-container form .data {
     height: 4.5rem;
     width: 100%;

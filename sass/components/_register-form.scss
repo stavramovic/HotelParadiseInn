@@ -14,21 +14,6 @@
 
     & form {
         margin-top: -2rem;
-
-        & .forgot-pass {
-            margin-top: -8px;
-
-            & a {
-                color: #1b2835;
-                text-decoration: none;
-                font-size: 1.7rem;
-                font-weight: 600;
-            
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
     }
 
     & form .data {
