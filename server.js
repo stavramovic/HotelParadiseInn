@@ -1,28 +1,32 @@
 const express = require('express')
 const path = require('path')
+const users = require('./routes/users')
+const connectDB = require('./db/connect')
+require('dotenv').config()
 
 const app = express()
 
+app.use(express.json())
+
 app.use(express.urlencoded({ extended: false }))
 
-const port = 3000
-
 app.use(express.static(__dirname))
-/* app.use('/css', express.static(__dirname + '/css'))
-app.use('/js', express.static(__dirname + '/js'))
-app.use('/img', express.static(__dirname + '/img')) */
 
 app.get('/', function (req, res) {
     res.sendFile(path.resolve(__dirname + '/index.html'))
 })
 
-/* app.all('*', function (req, res) {
-    res.status(404).send('resource not found')
-}) */
+app.use('/', users)
+app.use('/login', users)
 
-app.post('/', function(req, res) {
+const port = 3000
 
-    console.log(req.body)
-})
-
-app.listen(port, () => `Listening on port ${port}` )
+const start = async () => {
+    try {
+        await connectDB(process.env.MONGO_URI)
+        app.listen(port, () => console.log(`Listening on port ${port}`))
+    } catch(error) {
+        console.log(error)
+    }
+}
+start()
