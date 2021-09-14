@@ -104,7 +104,7 @@ observer.observe(document.querySelector('.journey__text'));
 
 
 //OPEN LOGIN FORM 
-const loginForm = document.querySelector('.form-container');
+const loginForm = document.querySelector('.login__form-container');
 
 const formButton = document.getElementsByClassName('formButton');
 for(let i=0; i<formButton.length; i++) {

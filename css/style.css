@@ -258,36 +258,33 @@ body {
   .btn--white-booking {
     margin-top: 28rem; }
 
-.btn-text {
-  /*    
-    &:active {
+.btn-text:link, .btn-text:visited {
+  font-size: 1.8rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid black;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.5rem; }
+  @media (max-width: 37.5em) {
+    .btn-text:link, .btn-text:visited {
+      font-size: 1.5rem; } }
 
-    }  */ }
-  .btn-text:link, .btn-text:visited {
-    font-size: 1.8rem;
-    color: black;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-bottom: 2px solid black;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 0.5rem; }
-    @media (max-width: 37.5em) {
-      .btn-text:link, .btn-text:visited {
-        font-size: 1.5rem; } }
-  .btn-text:before {
-    content: "LEARN\00a0MORE\00a0 ABOUT\00a0PARADISE\00a0INN";
-    position: absolute;
-    width: 0;
-    top: 0;
-    left: 0;
-    color: #a17a23;
-    overflow: hidden;
-    transition: all 1s linear;
-    border-bottom: 2px solid #a17a23;
-    padding-bottom: 0.4rem; }
-  .btn-text:hover:before {
-    width: 100%; }
+.btn-text:before {
+  content: "LEARN\00a0MORE\00a0 ABOUT\00a0PARADISE\00a0INN";
+  position: absolute;
+  width: 0;
+  top: 0;
+  left: 0;
+  color: #a17a23;
+  overflow: hidden;
+  transition: all 1s linear;
+  border-bottom: 2px solid #a17a23;
+  padding-bottom: 0.4rem; }
+
+.btn-text:hover:before {
+  width: 100%; }
 
 .card {
   height: 45rem;
@@ -403,7 +400,7 @@ body {
   top: 0;
   border-top-left-radius: 1rem; }
 
-.form-container {
+.login__form-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -414,43 +411,43 @@ body {
   width: 41rem;
   padding: 3rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
-  .form-container form {
+  .login__form-container form {
     margin-top: -2rem; }
-    .form-container form .forgot-pass {
+    .login__form-container form .forgot-pass {
       margin-top: -8px; }
-      .form-container form .forgot-pass a {
+      .login__form-container form .forgot-pass a {
         color: #1b2835;
         text-decoration: none;
         font-size: 1.7rem;
         font-weight: 600; }
-        .form-container form .forgot-pass a:hover {
+        .login__form-container form .forgot-pass a:hover {
           text-decoration: underline; }
-  .form-container form .data {
+  .login__form-container form .data {
     height: 4.5rem;
     width: 100%;
     margin: 4rem 0; }
-    .form-container form .data label {
+    .login__form-container form .data label {
       font-size: 1.8rem; }
-    .form-container form .data input {
+    .login__form-container form .data input {
       height: 100%;
       width: 100%;
       padding-left: 1rem;
       font-size: 1.7rem;
       border: 1px solid lightgrey; }
-  .form-container form .form-btn {
+  .login__form-container form .form-btn {
     margin: 3rem 0;
     height: 4.5rem;
     width: 100%;
     position: relative;
     overflow: hidden; }
-    .form-container form .form-btn .inner {
+    .login__form-container form .form-btn .inner {
       height: 100%;
       width: 300%;
       position: absolute;
       left: -100%;
       z-index: -1;
       background-color: #1b2835; }
-    .form-container form .form-btn button {
+    .login__form-container form .form-btn button {
       height: 100%;
       width: 100%;
       background: none;
@@ -461,16 +458,16 @@ body {
       text-transform: uppercase;
       letter-spacing: 1px;
       cursor: pointer; }
-  .form-container form .signup-link {
+  .login__form-container form .signup-link {
     text-align: center;
     font-size: 1.7rem;
     font-weight: 500; }
-    .form-container form .signup-link a {
+    .login__form-container form .signup-link a {
       color: #1b2835;
       font-size: 1.8rem;
       font-weight: 500;
       text-decoration: none; }
-      .form-container form .signup-link a:hover {
+      .login__form-container form .signup-link a:hover {
         text-decoration: underline; }
 
 .close-btn {
@@ -555,6 +552,27 @@ body {
       .register__form-container form .signup-link a:hover {
         text-decoration: underline; }
 
+.reg__message {
+  text-transform: uppercase;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5rem; }
+
+.message--primary {
+  display: block;
+  font-size: 3.5rem;
+  margin-bottom: 5rem;
+  font-family: 'Kaushan Script', cursive;
+  color: #333; }
+
+.message--secondary {
+  display: block;
+  font-size: 2.2rem; }
+
 .footer {
   background-color: #333;
   width: 100%;
@@ -566,6 +584,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.footer--register {
+  background-color: #333;
+  width: 100%;
+  height: 30rem;
+  position: relative; }
 
 .footer--image {
   height: 15rem; }
@@ -763,3 +787,6 @@ nav {
   padding: 20rem 0;
   background-color: #f4f4f4;
   position: relative; }
+
+.section-message {
+  padding: 33.45rem 0; }

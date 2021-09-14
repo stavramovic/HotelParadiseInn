@@ -7,13 +7,11 @@ require('dotenv').config()
 const app = express()
 
 app.use(express.json())
-
 app.use(express.urlencoded({ extended: false }))
-
 app.use(express.static(__dirname))
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve(__dirname + '/index.html'))
+    res.render(path.resolve(__dirname + '/index.ejs'))
 })
 
 app.use('/', users)
