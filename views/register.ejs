@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <main>
+            <section class="section-form">
+            <div class="register__form-container">
+                <div class="form-text-primary">Register Form</div>
+                <%- include ("./partials/messages"); %>
+                <form action="/register" method="POST">
+                    <div class="data">
+                        <label>Name</label>
+                        <input
+                         type="text"
+                         name="name"
+                         value="<%= typeof name != 'undefined' ? name : '' %>" 
+                        >
+                    </div>
+                    <div class="data">
+                        <label>Email</label>
+                        <input
+                         type="email"
+                         name="email"
+                         value="<%= typeof email != 'undefined' ? email : '' %>" 
+                        >
+                    </div>
+                    <div class="data">
+                        <label>Password</label>
+                        <input
+                         type="password"
+                         name="password"
+                         value="<%= typeof password != 'undefined' ? password : '' %>" 
+                        >
+                    </div>
+                    <div class="data">
+                        <label>Confirm Password</label>
+                        <input
+                         type="password"
+                         name="confirm_password"
+                         value="<%= typeof confirm_password != 'undefined' ? confirm_password : '' %>" 
+                        >
+                    </div>
+                    <div class="form-btn">
+                        <div class="inner"></div>
+                        <button type="submit">register</button>
+                    </div>
+                    <div class="signup-link">Already signed up? <a href="/login" class="backToLogin">Back to login</a></div>
+                </form>
+            </div>
+        </section>
+        </main>
+        <footer class="footer--register">
+            <div class="footer--center">
+                <img src="./img/Paradise Inn-logos_white.png" alt="image" class="footer--image">
+                <p class="footer--text">Copyright &copy 2021 Paradise Inn.</p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
+</html>

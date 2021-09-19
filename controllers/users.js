@@ -1,45 +1,71 @@
 const User = require('../models/user')
 const path = require('path')
+const bcrypt = require('bcrypt')
 
+const RegisterUser = (req, res) => {
+    const { name, email, password, confirm_password } = req.body;
+    let errors = [];
 
-const RegisterUser = async (req, res) => {
-    try {
-        if(req.body.password !== req.body.confirm_password) {
-            return res.status(400).send("Passwords didn't match")
-        }
-        
-        const {first_name:first_name} = req.body
-        const name = await User.findOne({first_name:first_name})
-        if(name) {
-            return res.status(404).json({msg: `User already exists`})
-        } else {
-            const user = await User.create(req.body)
-            res.status(201)
-            res.sendFile(path.resolve(__dirname, '..' + '/registerPage.html'))
-        }
-        
-    } catch (error) {
-        res.send(500).json({msg: error})
+    if(!name || !email || !password || !confirm_password) {
+        errors.push({msg: 'Please fill in all fields' });
     }
-}
- 
-const LoginUser = async (req, res) => {
-    try {
-        const {email:email} = req.body
-        const user = await User.findOne({email:email})
-    if(!user) {
-        return res.status(404).json({msg: `No user with email: ${email}`})
+
+    if(password !== confirm_password) {
+        errors.push({ msg: 'Passwords do not match' });
     }
-    if(user.password !== req.body.password) {
-        return res.status(404).json({msg: `Wrong password`})
+
+    if(password.length < 6) {
+        errors.push({ msg: 'Password should be at least 6 characters'});
     }
-        res.sendFile(path.resolve(__dirname, '..' + '/loggedInPage.html'))
-    } catch (error) {
-        res.send(500).json({msg: error})
+
+    if(errors.length > 0) {
+        res.render('register', {
+            errors,
+            name,
+            email,
+            password,
+            confirm_password
+        });
+    } else {
+        //Validation passed
+        User.findOne({email:email})
+            .then(user => {
+                if(user) {
+                    //User exists
+                    errors.push({ msg: 'Email is already registered'})
+                    res.render('register', {
+                        errors,
+                        name,
+                        email,
+                        password,
+                        confirm_password
+                    })
+                }   else {
+                    const newUser = new User({
+                        name,
+                        email,
+                        password
+                    })
+
+                    // Hash Password
+                    bcrypt.genSalt(10, (err, salt) =>
+                     bcrypt.hash(newUser.password, salt, (err, hash) => {
+                        if(err) throw err;
+                        // Set password to hashed
+                        newUser.password = hash;
+                        // Save user
+                        newUser.save()
+                        .then(user => {
+                             req.flash('success_msg', 'You are now registered and can login')
+                             res.redirect('/login')
+                         })
+                        .catch(err => console.log(err))
+                    }))
+                }
+            })
     }
 }
 
 module.exports = {
     RegisterUser,
-    LoginUser,
 }

@@ -1,16 +1,12 @@
 .register__form-container {
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
-    display: none;
     background: white;
     width: 41rem;
     padding: 3rem;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    
-   
 
     & form {
         margin-top: -2rem;
@@ -19,7 +15,7 @@
     & form .data {
         height: 4.5rem;
         width: 100%;
-        margin: 4rem 0;
+        margin: 3rem 0 4rem 0;
 
         & label {
             font-size: 1.8rem;
