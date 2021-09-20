@@ -62,6 +62,12 @@
     .col__journey--2 {
         width: 60rem;
         padding: 5rem;
+        margin-left: 5rem;
+
+        @include respond(tab-land) {
+            margin-left: 0;
+           
+        } 
      }
 }
 

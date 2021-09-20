@@ -636,7 +636,11 @@ body {
     width: 30rem; }
   .row__journey .col__journey--2 {
     width: 60rem;
-    padding: 5rem; }
+    padding: 5rem;
+    margin-left: 5rem; }
+    @media (max-width: 75em) {
+      .row__journey .col__journey--2 {
+        margin-left: 0; } }
 
 .row__packages {
   max-width: 130rem;
