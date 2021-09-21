@@ -9,7 +9,6 @@ const { RegisterUser } = require('../controllers/users');
 
 router.get('/login/user/', ensureAuthenticated, (req, res) => {
     res.render('loggedInPage')
-    /* name: req.user.name */
 })
 
 router.route('/register')
