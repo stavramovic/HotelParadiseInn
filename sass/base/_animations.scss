@@ -83,3 +83,17 @@
         opacity: 0;
     }
 }
+
+@keyframes slideshow {
+    0% {
+        transform: scale(1.2);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
