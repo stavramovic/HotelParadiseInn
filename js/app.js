@@ -44,6 +44,7 @@ function showPictures() {
 
     if(carouselIndex > carousel.length) {carouselIndex = 1}
     carousel[carouselIndex-1].style.display = "block";
+    carousel[carouselIndex-1].style.animation = `slideshow 2s`;
     setTimeout(showPictures, 5000);
 }
 

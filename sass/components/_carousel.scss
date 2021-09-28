@@ -1,6 +1,7 @@
 .carousel-container {
     position: relative;
     visibility: hidden;
+    overflow: hidden;
 
     @include respond(tab-land) {
         height: 20rem;
@@ -12,7 +13,7 @@
 .carousel-container img {
     background-size: cover;
     height: 40rem;
-    width: 60rem;
+    width: 100%;
     border-radius: 1rem;
     
     @include respond(tab-land) {
