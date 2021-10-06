@@ -1,14 +1,11 @@
 .btn {
-    &:link,
-    &:visited {
-        text-transform: uppercase;
+    text-transform: uppercase;
         text-decoration: none;
         padding: 1.4rem 4rem;
         display: inline-block;
         font-size: 1.5rem;
         position: relative;
         border: 1px solid #1b2835;
-    }
 
     &--white {
         background-color: white;
@@ -27,8 +24,12 @@
             color: white;
         }
 
-        &-booking {
+        &-room {
             margin-top: 28rem;
+
+            &-booking {
+                margin-top: 2rem;
+            }
         }
     }
 }

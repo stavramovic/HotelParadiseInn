@@ -1,0 +1,62 @@
+.box {
+    position: absolute;
+    width: 120rem;
+    height: 35rem;
+    top: 57%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.room__picture {
+    width: 45rem;
+    height: 31rem;
+    border-bottom-left-radius: 10px;
+}
+
+.box__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    
+
+    &-1 { grid-area: 1 / 1 / 2 / 2; }
+    &-2 { grid-area: 1 / 2 / 2 / 3; }
+    &-3 { grid-area: 1 / 3 / 2 / 4; font-size: 2rem;}
+}
+
+.letter-space {
+    letter-spacing: 0.07rem;
+}
+
+.price {
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 2rem;
+}
+
+.myBooking__title {
+    height:4rem;
+    font-size: 3.5rem;
+    color: #1b2835;
+	font-weight: 600;
+	font-style: italic;
+    text-align: center;
+    border-bottom: 1px solid#1b2835;
+}
+    
+.ul__myBooking {
+    list-style: none;
+	font-size: 1.6rem;
+	margin-left: 8rem;
+	margin-right: 3rem;
+}
+
+.ul__myBooking .li__booking:before {
+	content: '✓';
+	padding-right: 1rem;
+	margin-left: -2.3rem;
+}

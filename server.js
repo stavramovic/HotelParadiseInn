@@ -12,11 +12,11 @@ const app = express()
 //Passport config
 require('./config/passport')(passport)
 
-app.use(express.json())
 app.use(express.static(__dirname))
 
 // Bodyparser
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 // EJS
 app.set('view engine', 'ejs');
@@ -50,7 +50,9 @@ app.get('/', function (req, res) {
 
 // Routes
 app.use('/', users)
-
+app.use('/login', users)
+app.use('/user', users)
+app.use('/bookings', users)
 
 const port = 3000
 
