@@ -25,7 +25,6 @@ const room = (req,res) => {
                     },
                     function(err, res) {
                         if (err) throw err;
-                        console.log('1 document updated');
                     }
                 )        
         }   
@@ -51,7 +50,6 @@ const room = (req,res) => {
                     },
                     function(err, res) {
                         if (err) throw err;
-                        console.log('1 document updated');
                     }
                 )  
             }
@@ -79,7 +77,6 @@ const room = (req,res) => {
                         },
                         function(err, res) {
                             if (err) throw err;
-                            console.log('1 document updated');
                         }
                     ) 
                 }
