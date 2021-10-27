@@ -99,7 +99,7 @@ const bookingDate = (req, res) => {
             if (err) throw err;
         }
     )
-    res.redirect('/login/user/bookings') 
+    setTimeout(function() {res.redirect('/login/user/bookings')}, 500) 
 }
     
 

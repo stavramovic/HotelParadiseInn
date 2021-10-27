@@ -24,7 +24,8 @@ router.route('/')
 
 router.route('/user')
 .get(ensureAuthenticated, (req, res) => {
-    res.render('user-logged-in', {
+    res.render('../routes/index', {
+        username: req.user.name,
         booking: req.user.booking[0]
     })
 })

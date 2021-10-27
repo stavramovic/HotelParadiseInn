@@ -32,9 +32,25 @@
                <li>
                    <a href="#">CONTACT</a>
                 </li> 
-                <li>
-                    <a href="/login">REGISTER/LOGIN</a>
-                 </li> 
+                    <% if(typeof username === 'undefined') { %>
+                        <li>
+                            <a href="/login">REGISTER/LOGIN</a>
+                        </li>
+                    <% } else if(booking == undefined) { %>
+                        <li>
+                            <a href="/login/user">MY BOOKINGS</a>
+                        </li>
+                        <li>
+                            <a href="/logout">LOG OUT</a>
+                        </li>  
+                    <% } else { %>
+                        <li>
+                            <a href="/login/user/bookings">MY BOOKINGS</a>
+                        </li>
+                        <li>
+                            <a href="/logout">LOG OUT</a>
+                        </li>  
+                    <% } %>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -58,23 +74,23 @@
                         <div class="carousel-container">
                             <div class="carousel">
                                 <div class="numbertext">1 / 5</div>
-                                <img src="./img/carousel-1.jpg">
+                                <img src="/img/carousel-1.jpg">
                             </div>
                             <div class="carousel">
                                 <div class="numbertext">2 / 5</div>
-                                <img src="./img/carousel-2.jpg">
+                                <img src="/img/carousel-2.jpg">
                             </div>
                             <div class="carousel">
                                 <div class="numbertext">3 / 5</div>
-                                <img src="./img/carousel-3.jpg">
+                                <img src="/img/carousel-3.jpg">
                             </div>
                             <div class="carousel">
                                 <div class="numbertext">4 / 5</div>
-                                <img src="./img/carousel-4.jpg">
+                                <img src="/img/carousel-4.jpg">
                             </div>
                             <div class="carousel">
                                 <div class="numbertext">5 / 5</div>
-                                <img src="./img/carousel-5.jpg">
+                                <img src="/img/carousel-5.jpg">
                             </div>
                         </div>
                     </div>
@@ -104,7 +120,7 @@
                 <div class="row">
                     <div class="bg-video">
                         <video class="bg-video__content" autoplay muted loop>
-                            <source src="img/Skiing in a winter wonderland.mp4" type="video/mp4">
+                            <source src="/img/Skiing in a winter wonderland.mp4" type="video/mp4">
                             Your browser is not supported!
                         </video>
                     </div>
@@ -182,7 +198,9 @@
                                 <li class="li__booking">Optional breakfast arrangements</li>
                             </ul>
                             <div class="u-center-text">
-                                <a href="/login" class="btn btn--white btn--white-room formButton">Book now</a>
+                                <form action="/login/user" method="POST">
+                                    <button type="submit" name="room" value="roomBooking_1" class="btn btn--white btn--white-room formButton">Book now</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -203,7 +221,9 @@
                                 <li class="li__booking">Optional breakfast arrangements</li>
                             </ul>
                             <div class="u-center-text">
-                                <a href="#" class="btn btn--white btn--white-room formButton">Book now</a>
+                                <form action="/login/user" method="POST">
+                                    <button type="submit" name="room" value="roomBooking_2" class="btn btn--white btn--white-room formButton">Book now</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -226,7 +246,9 @@
                                 <li class="li__booking">Kitchenette equipped with sink, cooktop, dishes and utensils</li>
                             </ul>
                             <div class="u-center-text">
-                                <a href="#" class="btn btn--white btn--white-room formButton">Book now</a>
+                                <form action="/login/user" method="POST">
+                                    <button type="submit" name="room" value="roomBooking_3" class="btn btn--white btn--white-room formButton">Book now</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -236,10 +258,10 @@
 
         <footer class="footer">
             <div class="footer--center">
-                <img src="./img/Paradise Inn-logos_white.png" alt="image" class="footer--image">
+                <img src="/img/Paradise Inn-logos_white.png" alt="image" class="footer--image">
                 <p class="footer--text">Copyright &copy 2021 Paradise Inn.</p>
             </div>
         </footer>
-        <script src="js/app.js"></script>
+        <script src="/js/app.js"></script>
     </body>		
 </html>
