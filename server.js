@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 
 // Homepage
 app.get('/', function (req, res) {
-    res.render(path.resolve(__dirname + '/routes/index.ejs'))
+    res.render(path.resolve(__dirname + '/views/index.ejs'))
 })
 
 // Routes
