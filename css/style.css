@@ -506,11 +506,19 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19); }
+  @media (max-width: 75em) {
+    .box {
+      width: 50rem;
+      height: 80rem; } }
 
 .room__picture {
   width: 50rem;
   height: 31rem;
   border-bottom-left-radius: 10px; }
+  @media (max-width: 75em) {
+    .room__picture {
+      height: 25rem;
+      border-bottom-left-radius: 0; } }
 
 .box__grid {
   display: grid;
@@ -526,6 +534,16 @@ body {
   .box__grid-3 {
     grid-area: 1 / 3 / 2 / 4;
     font-size: 2rem; }
+  @media (max-width: 75em) {
+    .box__grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr); }
+      .box__grid-1 {
+        grid-area: 1 / 1 / 2 / 2; }
+      .box__grid-2 {
+        grid-area: 2 / 1 / 3 / 2; }
+      .box__grid-3 {
+        grid-area: 3 / 1 / 4 / 2; } }
 
 .letter-space {
   letter-spacing: 0.07rem; }
@@ -548,6 +566,9 @@ body {
   font-size: 1.6rem;
   margin-left: 8rem;
   margin-right: 3rem; }
+  @media (max-width: 75em) {
+    .ul__myBooking {
+      font-size: 2rem; } }
 
 .ul__myBooking .li__booking:before {
   content: '✓';
