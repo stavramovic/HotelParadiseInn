@@ -101,6 +101,3 @@ observer.observe(document.querySelector('.mountain__text'));
 observer.observe(document.querySelector('.row__packages'));
 observer.observe(document.querySelector('.journey-animation'));
 observer.observe(document.querySelector('.journey__text'));
-
-
-
